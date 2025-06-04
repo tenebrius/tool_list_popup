@@ -1,0 +1,64 @@
+      
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarsCloud Tools</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;family=Lato:wght@400;500&amp;display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <!-- You could link an external CSS file here for more complex styling,
+         but for this example, the CSS is injected by script.js -->
+</head>
+
+<body style="padding:0">
+    <style>
+         /* Basic body styling for centering and background */
+        body {
+            
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            /* Align to top for better visual */
+            min-height: 100vh;
+            background-color: #2e2e2e;
+            /* Dark background from image */
+            margin: 0;
+            padding-top: 50px;
+            /* Padding to prevent it from sticking to the very top */
+            box-sizing: border-box;
+        }
+    </style>
+    <!--
+        This div will be the target for the JavaScript to inject the tool list content.
+        The script is designed to either populate this existing div, or create a new one
+        and append it to the body if this one doesn't exist.
+    -->
+    <div style="width:100%; background:white">
+    <div class="tool-list-container" style="box-shadow:none; height:74px">
+        <!-- Content will be dynamically generated here by script.js -->
+    </div>
+    
+    <div style="position: fixed; top: 10px; right: 10px; background: #fff; padding: 10px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+        <p>Simulate language change:</p>
+        <button onclick="window.toolListPopup.setLocale('en')">Set English</button>
+        <button onclick="window.toolListPopup.setLocale('zh')">Set Chinese</button>
+    </div>
+    </div>
+
+    <!--
+        Link your JavaScript file here.
+        It's best practice to place script tags that manipulate the DOM
+        at the end of the <body> or use the 'defer' attribute
+        to ensure the HTML content is loaded before the script tries to access it.
+    -->
+    <script src="popup.js"></script>
+    <link rel="stylesheet" href="popup.css">
+
+</body>
+</html>
+
+    

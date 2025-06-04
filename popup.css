@@ -1,0 +1,261 @@
+
+/* Horizontal layout for sections */
+.tool-list-sections-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    gap: 32px;
+}
+
+
+
+
+
+
+ /* Main container for the tool list */
+ .tool-list-container {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    position: relative;
+    /* Crucial for positioning the dropdown */
+    background-color: #fff;
+    
+    width: fit-content;
+    /* Adjust width based on content */
+    
+    z-index: 1000;
+
+    
+ }
+
+ /* Header styling */
+ .tool-list-header {
+    aspect-ratio: 1 / 1;
+     display: flex;
+     align-items: center;
+     
+     height: 100%;
+     background-color: rgb(255, 81, 0);
+     justify-content: center;
+     /* padding: 15px 20px; */
+     /* background-color: #fff; */
+     /* border-bottom: 1px solid #eee; */
+ }
+
+ /* Grid icon styling */
+ .grid-icon {
+   
+     cursor: pointer;
+
+ }
+
+ .grid-icon:hover {
+     background-color: #e66200;
+     /* Darker orange on hover */
+ }
+
+ .grid-icon svg {
+     width:100%
+ }
+
+
+
+ /* Dropdown content styling */
+ .tool-list-dropdown {
+    position: absolute;
+    top: calc(100% + 3px);
+    /* Position 10px below the header */
+    left: 0;
+    background-color: #fff;
+    
+    padding: 1.5rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    /* Minimum width to fit content side-by-side */
+    box-sizing: border-box;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.1s ease, visibility 0.1s ease, transform 0.1s ease;
+
+
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, .0784313725);
+    border-width: 0px 1px 1px 1px;
+    border-style: solid;
+    border-color: #e2e2e2;
+    border-bottom-right-radius: 10px;
+ }
+
+ .tool-list-dropdown.hidden {
+     opacity: 0;
+     visibility: hidden;
+     transform: translateY(-10px);
+     /* Move up slightly when hidden */
+     pointer-events: none;
+     /* Disable interactions when hidden */
+ }
+
+ /* Section styling (AI Products / TMS) */
+ .tool-list-dropdown .tool-list-section {
+     flex: 1;
+     /* Allow sections to take available space */
+     min-width: 180px;
+     /* Minimum width for each column */
+ }
+
+ .tool-list-dropdown h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(29, 29, 29);
+    padding-left: 10px;
+    margin: 0px;
+    text-align: left;
+}
+
+ .tool-list-dropdown ul {
+     list-style: none;
+     padding: 10px 0px;
+     margin: 0;
+ }
+
+ .tool-list-dropdown li {
+     margin-bottom: 8px;
+ }
+
+ .tool-list-dropdown li:last-child {
+     margin-bottom: 0;
+ }
+
+ /* Link styling for each tool */
+ .tool-list-dropdown a {
+     display: flex;
+     align-items: center;
+    
+     text-decoration: none;
+     color: #333;
+     font-size: 16px;
+     border-radius: 6px;
+     transition: background-color 0.2s ease, color 0.2s ease;
+     white-space: nowrap;
+
+    border-radius: 10px;
+    padding: 8px 25px 8px 10px;
+    margin-bottom: 6px;
+    font-size: 16px;
+    color: rgb(29, 29, 29);
+    font-family: 'Poppins', sans-serif;
+    font-weight:400;
+    margin-bottom: 6px;
+    
+     /* Prevent icon and text from wrapping */
+ }
+
+ .tool-list-dropdown a:hover {
+    background-color: #fff2e6;
+     /* Light gray on hover */
+ }
+
+ /* Active state for MarsVoice */
+ .tool-list-dropdown a.active {
+     background-color: #fff2e6;
+     /* Light orange background */
+     color: #ff6f00;
+     /* Orange text */
+ }
+
+ .tool-list-dropdown a.active .icon svg {
+     color: #ff6f00;
+     /* Ensure icon also matches active color */
+ }
+
+ /* Icon container styling */
+ .tool-list-dropdown .tool-list-icon {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 28px;
+     /* Standardize icon size container */
+     height: 28px;
+     margin-right: 12px;
+     color: #ff6f00;
+     /* Default icon color */
+     flex-shrink: 0;
+
+    border-radius: 5px;
+    background: #fef7f3;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+ }
+
+ .tool-list-dropdown .tool-list-icon svg {
+     width: 20px;
+     height: 20px;
+     fill: currentColor;
+     /* Allows color to be set by parent 'color' property */
+ }
+
+
+ .tool-list-dropdown .mars-hub-link {
+     color: #ff6f00;
+     /* Orange */
+     font-weight: 400;
+     text-decoration: none;
+     font-size: 14px;
+     padding: 8px 12px;
+     border-radius: 6px;
+     
+     border-bottom: 1px solid #e8e8e8;
+ }
+
+ .tool-list-dropdown .mars-hub-link svg {
+     margin-left: 16px
+ }
+
+ .tool-list-dropdown .mars-hub-link:hover {
+     background-color: #fff2e6;
+     /* Light orange on hover */
+ }
+
+
+ /* Basic responsive adjustment for smaller screens */
+ @media (max-width: 600px) {
+     .tool-list-dropdown {
+         flex-direction: column;
+         /* Stack sections vertically */
+         min-width: unset;
+         /* Remove min-width constraint */
+         width: 100%;
+         /* Take full width of parent */
+         left: 0;
+         right: 0;
+         top: calc(100% + 10px);
+         transform: translateX(0);
+         /* Remove horizontal transform */
+     }
+
+     .tool-list-dropdown .tool-list-section {
+         min-width: unset;
+         width: 100%;
+         margin-bottom: 20px;
+         /* Add space between stacked sections */
+     }
+
+     .tool-list-dropdown .tool-list-section:last-of-type {
+         margin-bottom: 0;
+     }
+
+     .tool-list-container {
+         width: 90%;
+         /* Make container slightly responsive */
+     }
+ }
+
+
