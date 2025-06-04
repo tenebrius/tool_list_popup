@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { nameKey: "marsCAT", icon: "marscat", link: "https://www.marshub.com/products/marscat/" }
         ],
         footer: {
-            marsHub: { textKey: "visitMarsHub", link: "#marshub" },
+            marsHub: { textKey: "visitMarsHub", link: "https://marshub.com" },
           
         }
     };
